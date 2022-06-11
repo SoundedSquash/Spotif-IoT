@@ -1,0 +1,15 @@
+{
+    "copyTracks":
+    [
+        {
+            "playlistFromName": "Release Radar",
+            "playlistToName": "Release Radar ",
+            "addCurrentYearToPlaylistToName": true
+        },
+        {
+            "playlistFromName": "Discover Weekly",
+            "playlistToName": "Discover Weekly ",
+            "addCurrentYearToPlaylistToName": true
+        }
+    ]
+}
