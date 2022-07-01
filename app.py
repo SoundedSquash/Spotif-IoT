@@ -6,13 +6,14 @@ from spotipy.oauth2 import SpotifyOAuth
 from datetime import date
 import os
 
-scope = 'playlist-modify-private playlist-read-private'
-
-spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
-
-limit = int(os.getenv('SPOTIPY_PAGE_LIMIT')) if os.getenv('SPOTIPY_PAGE_LIMIT') else 50
-
+#Load config
 config = json.load(open('config.json'))
+
+scope = 'playlist-modify-private playlist-read-private'
+spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope), client_credentials_manager=spotipy.SpotifyClientCredentials(client_id=config['clientId'], client_secret=config['clientSecret']))
+
+limit = int(config['resultLimit']) if config['resultLimit'] else 50
+
 copyTracks = config["copyTracks"]
 
 def CopyTracks(playlistFromName, playlistToName, addYeartoPlaylistToName):
