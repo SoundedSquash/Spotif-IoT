@@ -10,7 +10,7 @@ import os
 config = json.load(open('config.json'))
 
 scope = 'playlist-modify-private playlist-read-private'
-spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope), client_credentials_manager=spotipy.SpotifyClientCredentials(client_id=config['clientId'], client_secret=config['clientSecret']))
+spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=config['clientId'], client_secret=config['clientSecret'], redirect_uri=config['redirectUrl'], scope=scope))
 
 limit = int(config['resultLimit']) if config['resultLimit'] else 50
 

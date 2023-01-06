@@ -1,7 +1,4 @@
 {
-    "clientId": "",
-    "clientSecret": "",
-    "redirectUrl": "http://localhost:8888/callback",
     "resultLimit": 50,
     "copyTracks":
     [
