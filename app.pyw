@@ -59,7 +59,8 @@ def CopyTracks(playlistFromName, playlistToName, addYeartoPlaylistToName):
 
 
             print(f"Determining if there are new tracks to add.")
-            uniqueTrackIds = [id for id in fromTracks if id not in toTracks]
+            # Find tracks ids that are missing from the To playlist by comparing the lists.
+            uniqueTrackIds = [track['track']['id'] for track in fromTracks if track['track']['id'] not in [item['track']['id'] for item in toTracks]]
             # Add tracks to playlist
             if(len(uniqueTrackIds) > 0): 
                 spotify.playlist_add_items(playlist_id=playlistToId, items=uniqueTrackIds)
