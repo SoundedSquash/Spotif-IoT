@@ -1,3 +1,5 @@
+# This project is deprecated as Spotify removed the ability to retrieve a user's Discovery Weekly and Release Radar playlists
+
 First time use:
 1. Copy config.json.default to config.json
 2. Fill in client id and secret
